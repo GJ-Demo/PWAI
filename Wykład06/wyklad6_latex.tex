@@ -1,0 +1,140 @@
+% Prosty przykład dokumentu LaTeXa
+\documentclass{article}
+
+% użyte pakiety
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+%\usepackage{amsthm}
+
+\newtheorem{theorem}{Twierdzenie}[subsection]
+\newtheorem{definition}[theorem]{Definicja}
+
+\title{Prosty przykład dokumentu}
+
+\begin{document}
+
+\maketitle
+
+\section{\TeX + \LaTeX~-- wstęp}
+
+\TeX~-- system składania tekstu technicznego.
+
+\LaTeX~-- oprogramowanie do składania tekstu z użyciem \TeX~i rozszerzony język znaczników służących do opisywania (składania) dokumentu.
+
+,,X'' to greckie $\chi$ (czyt. ,,chi''), zatem \textbf{Latex} czyta się \textbf{,,latech''}.
+
+\bigskip
+
+\textbf{Przygotowanie dokumentu:}
+
+\begin{center}
+\fbox{Źródło dokumentu Latex: plik tekstowy (typowo z rozszerzeniem .tex)}
+\bigskip
+
+	$\Downarrow$
+(kompilator Latexa)
+	$\Downarrow$
+
+\bigskip	
+\fbox{Gotowy dokument (np. pdf)}
+\end{center}	
+\bigskip
+
+\textbf{Popularne dystrybucje \LaTeX a (kompilator + biblioteki + system dystrybucji bibliotek):}
+
+\begin{itemize}
+	\item TeX Live: \url{https://www.tug.org/texlive/}
+	\item MiKTeX: \url{https://miktex.org}
+	\item MacTeX, proTeXt, TinyTeX
+\end{itemize}
+
+\textbf{Popularne edytory:}
+
+\begin{itemize}
+	\item TeXstudio: \url{https://texstudio.org/}
+	\item TeXworks: \url{https://tug.org/texworks/}
+	\item Texmaker: \url{https://www.xm1math.net/texmaker/}
+	\item VS Code + plugin
+\end{itemize}
+
+\textbf{Edytor webowy (wygodna opcja, bo nie trzeba nic instalować, wymaga rejestracji):}
+
+\begin{itemize}
+	\item Overleaf: \url{https://www.overleaf.com/}
+\end{itemize}
+
+\bigskip
+
+Rozsądnie najpierw zainstalować \LaTeX a, a następnie edytor (pozwalając edytorowi znaleźć i ustawić \LaTeX a).
+
+\bigskip
+
+\section{Przykłady tekstu}
+LaTeX składa tekst w dwóch trybach: zwykłym (domyślnym) i matematycznym.
+\subsection{Tryb zwykły}
+Surowe podstawy -- tekst jest domyślnie formatowany w paragrafach: pojedynczy koniec linii w pliku źródłowym
+nie wpływa na formatowanie
+ale
+może
+ułatwić
+pisanie
+długich
+zdań.
+
+Podwójny koniec linii rozpocznie nowy paragraf (który zostaje automatycznie wcięty).
+
+Poza tym wcięcia (generalnie) nie mają wpływu na formatowanie i można ich używać do organizacji kodu.
+
+Jeśli linijka jest zbyt długa, wtedy zostanie stosowanie złamana poprzez wyjustowanie lub złamanie słowa z użyciem myślnika.
+\subsection{Tryb matematyczny}
+Tryb matematyczny w danej linijce: rozwiązaniem równania \(x^2 - 2x + 1 = 0\) jest \(0\). Z kolei tryb matematyczny wycentrowany:
+\[0 < x < 5 \land 2 < y < 3 \Rightarrow 2 < x+y < 8.\]
+Specyficzne środowisko w którym używany jest tryb matematyczny, np. \texttt{align}/\texttt{align*} (pakiet \texttt{amsmath}):
+\begin{align}
+	2x + 4y + 1 & = 5x - 2y + 2,\\
+	4y + 1 & = 3x - 2y + 2,\\
+	6y + 1 & = 3x + 2,\\
+	6y  & = 3x + 1,\\
+	y  & = \frac{3x + 1}{6}.\\
+\end{align}
+\subsection{Przykłady konkretnych wyrażeń}
+\begin{itemize}
+\item Symbole (z \texttt{amssymb}) i indeksy: \(\mathbb{R}, \mathbb{N}, \emptyset, A_i, B^j, C_2^{j+1}\).
+
+\item Szeregi:
+\[ \sum_{i=1}^\infty \frac{1}{n} = \infty.\]
+
+\item Całki:
+\[ \int_0^\infty \frac{1}{x}\, dx = \infty.\]
+
+\item Operacje na zbiorach:
+\[ (A \cup B) \cap C = (A \cap C) \cup (B \cap C).\]
+
+\item Logika:
+\[ \neg p \land q \Rightarrow \neg p \lor q.\]
+
+\item Macierze:
+\[
+\begin{pmatrix}
+	1 & 2 \\
+	3 & 4 \\
+\end{pmatrix},
+\begin{pmatrix}
+	a_{11} & a_{12} & a_{13} \\
+	a_{21} & a_{22} & a_{23} \\
+\end{pmatrix}.
+\]
+\end{itemize}
+\subsection{Środowiska}
+\begin{definition}
+	Funkcją ze zbioru $X$ w zbiór $Y$ nazywamy $f \subseteq X \times Y$ taki, że dla każdego $x \in X$ istnieje dokładnie jeden $y \in Y$ taki, że $\langle x, y \rangle \in f$. Notacja: $\langle x, y \rangle \in f \iff f(x) = y.$
+\end{definition}
+
+\begin{theorem}[Bolzana-Weierstrassa]
+	Każdy ograniczony ciąg liczb rzeczywistych ma podciąg zbieżny.
+\end{theorem}
+	
+\end{document}

@@ -1,0 +1,48 @@
+% Kilka elementów LaTeXa
+% Jeśli nie widać spisu treści, skompiluj kod dwa razy
+\documentclass{article}
+
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{color}
+
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Twierdzenie}[subsection]
+
+\newcommand{\R}{\mathbb{R}}
+% zastąpienie makra, np. inny symbol końca dowodu:
+% \renewcommand{\qedsymbol}{\(\blacksquare\)}
+
+\definecolor{darkgreen}{rgb}{0, 0.5, 0}
+
+\begin{document}
+
+\tableofcontents
+
+\section{Pierwsza sekcja}
+\section{Druga sekcja}
+\subsection{Podsekcja A}
+\label{sec:nazwa}
+\subsubsection{Pod-podsekcja}
+\subsubsection{Pod-podsekcja}
+\begin{theorem}
+	\label{thm:kresy}
+	Każda funkcja ciągła \(f \colon [a, b] \to \R\) osiąga swoje kresy.
+\end{theorem}
+\begin{proof}
+	Ćwiczenie dla czytelnika.
+\end{proof}
+\subsection{Podsekcja B}
+\newpage
+\section*{Sekcja bez numeru}
+\section{Trzecia sekcja}
+
+Jak widać w {\color{darkgreen}podsekcji} \ref{sec:nazwa} \ldots\\
+Jak wynika z Twierdzenia \ref{thm:kresy} \ldots
+
+\end{document}
