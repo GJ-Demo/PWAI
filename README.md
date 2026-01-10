@@ -6,9 +6,3 @@ Tworzenie lokalnej kopii:
 ```bash
 git clone https://github.com/GJ-Demo/PWAI
 ```
-
-:)
-:)
-:)
-tu byłem
-
